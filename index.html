@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <!-- 1-QISM: LOGIN OYNASI (Xuddi avvalgidek) -->
+    <div class="container" id="login-page">
         <nav>
             <h1>My Website</h1>
             <ul>
@@ -20,12 +22,12 @@
 
         <main>
             <div class="section">
-                <form action="#" method="post">
+                <form id="login-form">
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="username" name="username" placeholder="Ismingizni yozing..." required>
 
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" placeholder="Parol..." required>
 
                     <button type="submit">Log In</button>
                 </form>
@@ -36,5 +38,98 @@
             <p>&copy; 2026 My Website. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- 2-QISM: LOGIN QILGANDAN KEYIN OCHILADIGAN CHIROYLI SAYT -->
+    <div class="dashboard" id="main-site" style="display: none;">
+        <header class="dash-nav">
+            <div class="logo">MY<span>SPACE</span></div>
+            <nav-links>
+                <a href="#hero" class="active">Asosiy</a>
+                <a href="#cards">Loyihalar</a>
+                <a href="#stats">Natijalar</a>
+            </nav-links>
+            <button id="logout-btn" class="logout-btn">Chiqish</button>
+        </header>
+
+        <section class="hero" id="hero">
+            <div class="badge">Xush kelibsiz, <span id="user-display">Mehmon</span>!</div>
+            <h1>Kelajak texnologiyalarini birga quramiz</h1>
+            <p>Bu sizning shaxsiy boshqaruv sahifangiz. Zamonaviy dizayn, tezkor ishlash va barcha loyihalar bir joyda.</p>
+            <div class="hero-btns">
+                <a href="#cards" class="btn-primary">Loyihalarni ko‘rish</a>
+                <a href="#stats" class="btn-secondary">Batafsil ma'lumot</a>
+            </div>
+        </section>
+
+        <section class="cards-section" id="cards">
+            <h2>Asosiy yo‘nalishlar</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Web Dasturlash</h3>
+                    <p>HTML, CSS va JavaScript yordamida yaratilgan zamonaviy va tezkor veb-saytlar.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3>GitHub Loyihalar</h3>
+                    <p>Barcha kodlar xavfsiz saqlanadigan va internetga ulanadigan bulutli tizim.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>UI/UX Dizayn</h3>
+                    <p>Foydalanuvchilar uchun qulay, ko‘zni charchatmaydigan shisha (Glass) uslubidagi dizayn.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section" id="stats">
+            <div class="stat-box">
+                <h3>100%</h3>
+                <p>Tezlik va sifat</p>
+            </div>
+            <div class="stat-box">
+                <h3>24/7</h3>
+                <p>Onlayn faoliyat</p>
+            </div>
+            <div class="stat-box">
+                <h3>2026</h3>
+                <p>Yangi avlod dizayni</p>
+            </div>
+        </section>
+
+        <footer class="dash-footer">
+            <p>&copy; 2026 My Website | <span id="footer-user"></span> uchun maxsus tayyorlandi.</p>
+        </footer>
+    </div>
+
+    <!-- SAYTNI OCHISH UCHUN JAVASCRIPT -->
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const loginPage = document.getElementById('login-page');
+        const mainSite = document.getElementById('main-site');
+        const usernameInput = document.getElementById('username');
+        const userDisplay = document.getElementById('user-display');
+        const footerUser = document.getElementById('footer-user');
+        const logoutBtn = document.getElementById('logout-btn');
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Sahifa yangilanib ketishini to'xtatadi
+            const enteredName = usernameInput.value.trim();
+
+            if (enteredName !== "") {
+                userDisplay.textContent = enteredName;
+                footerUser.textContent = enteredName;
+                loginPage.style.display = 'none';
+                mainSite.style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+        });
+
+        logoutBtn.addEventListener('click', function() {
+            mainSite.style.display = 'none';
+            loginPage.style.display = 'block';
+            loginForm.reset();
+        });
+    </script>
 </body>
 </html>
