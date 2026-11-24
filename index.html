@@ -1,135 +1,401 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>LUMI | Creative World</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 1-QISM: LOGIN OYNASI (Xuddi avvalgidek) -->
-    <div class="container" id="login-page">
+<!-- LOGIN PAGE -->
+
+<section class="login-page" id="loginPage">
+
+    <div class="login-box">
+
+        <div class="logo">LUMI<span>.</span></div>
+
+        <p class="welcome">WELCOME BACK</p>
+
+        <h1>Discover Your<br>Creative World.</h1>
+
+        <p class="subtitle">
+            Davom etish uchun hisobingizga kiring.
+        </p>
+
+        <form id="loginForm">
+
+            <label>Username</label>
+            <input type="text" id="username"
+            placeholder="Ismingizni kiriting" required>
+
+            <label>Password</label>
+
+            <div class="password-box">
+                <input type="password" id="password"
+                placeholder="Parolingizni kiriting" required>
+
+                <button type="button" id="togglePassword">
+                    👁
+                </button>
+            </div>
+
+            <p id="errorMessage"></p>
+
+            <button type="submit" class="login-btn">
+                LOG IN <span>→</span>
+            </button>
+
+        </form>
+
+        <div class="login-footer">
+            © 2026 LUMI Creative World
+        </div>
+
+    </div>
+
+    <div class="login-image">
+        <div class="image-text">
+            <span>YOUR WORLD</span>
+            <h2>Beauty is<br>everywhere.</h2>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- MAIN WEBSITE -->
+
+<div class="main-site" id="mainSite">
+
+    <header class="navbar">
+
+        <a href="#" class="brand">LUMI<span>.</span></a>
+
         <nav>
-            <h1>My Website</h1>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-        <main>
-            <div class="section">
-                <form id="login-form">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" placeholder="Ismingizni yozing..." required>
+        <div class="nav-actions">
+            <button id="themeBtn">☀️</button>
+            <button id="logoutBtn" class="logout">Log out ↗</button>
+        </div>
 
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Parol..." required>
+    </header>
 
-                    <button type="submit">Log In</button>
-                </form>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="tag">✦ EXPLORE THE BEAUTY</span>
+
+            <h1>
+                Discover the<br>
+                <span>World of Art.</span>
+            </h1>
+
+            <p>
+                Go‘zallik, ilhom va ijod birlashgan
+                ajoyib dunyoga xush kelibsiz.
+            </p>
+
+            <a href="#gallery" class="hero-btn">
+                Explore Gallery →
+            </a>
+
+        </div>
+
+        <div class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1000"
+            alt="Beautiful mountain landscape">
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section class="gallery-section" id="gallery">
+
+        <div class="section-heading">
+            <div>
+                <span class="tag">OUR COLLECTION</span>
+                <h2>Beautiful Moments<span>.</span></h2>
             </div>
-        </main>
 
-        <footer>
-            <p>&copy; 2026 My Website. All rights reserved.</p>
-        </footer>
-    </div>
+            <input type="text" id="searchInput"
+            placeholder="🔍 Search images...">
+        </div>
 
-    <!-- 2-QISM: LOGIN QILGANDAN KEYIN OCHILADIGAN CHIROYLI SAYT -->
-    <div class="dashboard" id="main-site" style="display: none;">
-        <header class="dash-nav">
-            <div class="logo">MY<span>SPACE</span></div>
-            <nav-links>
-                <a href="#hero" class="active">Asosiy</a>
-                <a href="#cards">Loyihalar</a>
-                <a href="#stats">Natijalar</a>
-            </nav-links>
-            <button id="logout-btn" class="logout-btn">Chiqish</button>
-        </header>
+        <div class="filters">
 
-        <section class="hero" id="hero">
-            <div class="badge">Xush kelibsiz, <span id="user-display">Mehmon</span>!</div>
-            <h1>Kelajak texnologiyalarini birga quramiz</h1>
-            <p>Bu sizning shaxsiy boshqaruv sahifangiz. Zamonaviy dizayn, tezkor ishlash va barcha loyihalar bir joyda.</p>
-            <div class="hero-btns">
-                <a href="#cards" class="btn-primary">Loyihalarni ko‘rish</a>
-                <a href="#stats" class="btn-secondary">Batafsil ma'lumot</a>
-            </div>
-        </section>
+            <button class="filter active" data-category="all">All</button>
+            <button class="filter" data-category="nature">Nature</button>
+            <button class="filter" data-category="city">City</button>
+            <button class="filter" data-category="art">Art</button>
+            <button class="filter" data-category="travel">Travel</button>
 
-        <section class="cards-section" id="cards">
-            <h2>Asosiy yo‘nalishlar</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">💻</div>
-                    <h3>Web Dasturlash</h3>
-                    <p>HTML, CSS va JavaScript yordamida yaratilgan zamonaviy va tezkor veb-saytlar.</p>
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-card" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=700" alt="Nature">
+                <div class="card-info">
+                    <span>NATURE</span>
+                    <h3>Morning Beauty</h3>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🚀</div>
-                    <h3>GitHub Loyihalar</h3>
-                    <p>Barcha kodlar xavfsiz saqlanadigan va internetga ulanadigan bulutli tizim.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🎨</div>
-                    <h3>UI/UX Dizayn</h3>
-                    <p>Foydalanuvchilar uchun qulay, ko‘zni charchatmaydigan shisha (Glass) uslubidagi dizayn.</p>
+            </div>
+
+            <div class="gallery-card" data-category="city">
+                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=700" alt="City">
+                <div class="card-info">
+                    <span>CITY</span>
+                    <h3>City Lights</h3>
                 </div>
             </div>
-        </section>
 
-        <section class="stats-section" id="stats">
-            <div class="stat-box">
-                <h3>100%</h3>
-                <p>Tezlik va sifat</p>
+            <div class="gallery-card" data-category="art">
+                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=700" alt="Art">
+                <div class="card-info">
+                    <span>ART</span>
+                    <h3>Creative Colors</h3>
+                </div>
             </div>
-            <div class="stat-box">
-                <h3>24/7</h3>
-                <p>Onlayn faoliyat</p>
+
+            <div class="gallery-card" data-category="travel">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Travel">
+                <div class="card-info">
+                    <span>TRAVEL</span>
+                    <h3>New Adventures</h3>
+                </div>
             </div>
-            <div class="stat-box">
-                <h3>2026</h3>
-                <p>Yangi avlod dizayni</p>
+
+            <div class="gallery-card" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700" alt="Forest">
+                <div class="card-info">
+                    <span>NATURE</span>
+                    <h3>Green Paradise</h3>
+                </div>
             </div>
-        </section>
 
-        <footer class="dash-footer">
-            <p>&copy; 2026 My Website | <span id="footer-user"></span> uchun maxsus tayyorlandi.</p>
-        </footer>
-    </div>
+            <div class="gallery-card" data-category="travel">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700" alt="Mountains">
+                <div class="card-info">
+                    <span>TRAVEL</span>
+                    <h3>Mountain Dreams</h3>
+                </div>
+            </div>
 
-    <!-- SAYTNI OCHISH UCHUN JAVASCRIPT -->
-    <script>
-        const loginForm = document.getElementById('login-form');
-        const loginPage = document.getElementById('login-page');
-        const mainSite = document.getElementById('main-site');
-        const usernameInput = document.getElementById('username');
-        const userDisplay = document.getElementById('user-display');
-        const footerUser = document.getElementById('footer-user');
-        const logoutBtn = document.getElementById('logout-btn');
+        </div>
 
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Sahifa yangilanib ketishini to'xtatadi
-            const enteredName = usernameInput.value.trim();
+        <p id="noResults" class="no-results">
+            Hech qanday rasm topilmadi.
+        </p>
 
-            if (enteredName !== "") {
-                userDisplay.textContent = enteredName;
-                footerUser.textContent = enteredName;
-                loginPage.style.display = 'none';
-                mainSite.style.display = 'block';
-                window.scrollTo(0, 0);
-            }
-        });
+    </section>
 
-        logoutBtn.addEventListener('click', function() {
-            mainSite.style.display = 'none';
-            loginPage.style.display = 'block';
-            loginForm.reset();
-        });
-    </script>
+
+    <!-- ABOUT -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000" alt="Landscape">
+        </div>
+
+        <div class="about-content">
+
+            <span class="tag">ABOUT LUMI</span>
+
+            <h2>We believe in the power of creativity.</h2>
+
+            <p>
+                LUMI — bu go‘zallik, ijod va ilhomni
+                birlashtiruvchi maxsus platforma.
+                Bu yerda har bir rasm o‘z hikoyasiga ega.
+            </p>
+
+            <a href="#contact" class="hero-btn">
+                Learn More →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact-section" id="contact">
+
+        <span class="tag">GET IN TOUCH</span>
+
+        <h2>Let's create something <span>beautiful.</span></h2>
+
+        <p>Biz bilan bog‘laning va o‘z fikrlaringizni ulashing.</p>
+
+        <a href="mailto:hello@example.com" class="hero-btn">
+            Contact Us →
+        </a>
+
+    </section>
+
+
+    <footer>
+        <a href="#" class="brand">LUMI<span>.</span></a>
+        <p>© 2026 LUMI Creative World. All rights reserved.</p>
+        <a href="#home">Back to top ↑</a>
+    </footer>
+
+</div>
+
+
+<script>
+
+// DEMO LOGIN
+// Haqiqiy sayt uchun server orqali autentifikatsiya kerak.
+
+const correctUsername = "admin";
+const correctPassword = "12345";
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const error = document.getElementById("errorMessage");
+
+    if (username === correctUsername &&
+        password === correctPassword) {
+
+        error.textContent = "";
+
+        document.getElementById("loginPage").style.display = "none";
+
+        document.getElementById("mainSite").style.display = "block";
+
+        window.scrollTo(0, 0);
+
+    } else {
+
+        error.textContent = "Username yoki parol noto‘g‘ri!";
+
+    }
+
+});
+
+
+// SHOW / HIDE PASSWORD
+
+document.getElementById("togglePassword").addEventListener("click", function() {
+
+    const password = document.getElementById("password");
+
+    password.type = password.type === "password" ? "text" : "password";
+
+});
+
+
+// LOG OUT
+
+document.getElementById("logoutBtn").addEventListener("click", function() {
+
+    document.getElementById("mainSite").style.display = "none";
+    document.getElementById("loginPage").style.display = "flex";
+
+    loginForm.reset();
+
+    window.scrollTo(0, 0);
+
+});
+
+
+// GALLERY FILTER
+
+const filters = document.querySelectorAll(".filter");
+const cards = document.querySelectorAll(".gallery-card");
+const searchInput = document.getElementById("searchInput");
+
+let selectedCategory = "all";
+
+function filterGallery() {
+
+    const search = searchInput.value.toLowerCase();
+    let visible = 0;
+
+    cards.forEach(card => {
+
+        const category = card.dataset.category;
+        const title = card.querySelector("h3").textContent.toLowerCase();
+
+        const categoryMatch =
+            selectedCategory === "all" || category === selectedCategory;
+
+        const searchMatch = title.includes(search);
+
+        if (categoryMatch && searchMatch) {
+
+            card.style.display = "block";
+            visible++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    document.getElementById("noResults").style.display =
+        visible === 0 ? "block" : "none";
+
+}
+
+filters.forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        filters.forEach(btn => btn.classList.remove("active"));
+
+        this.classList.add("active");
+
+        selectedCategory = this.dataset.category;
+
+        filterGallery();
+
+    });
+
+});
+
+searchInput.addEventListener("input", filterGallery);
+
+
+// DARK / LIGHT MODE
+
+document.getElementById("themeBtn").addEventListener("click", function() {
+
+    document.body.classList.toggle("light-mode");
+
+    this.textContent =
+        document.body.classList.contains("light-mode") ? "🌙" : "☀️";
+
+});
+
+</script>
+
 </body>
 </html>
